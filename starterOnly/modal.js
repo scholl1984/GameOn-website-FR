@@ -105,6 +105,8 @@ function checkLocation(){
 
 function checkBox1(){
   if(document.getElementById("checkbox1").checked) {
+    
+    
     return true;
   }
   else{
@@ -114,7 +116,7 @@ function checkBox1(){
 
 function validate () {
   let checkbox1FormData = document.getElementById('six-form-data');
-
+  let locationFormData = document.getElementById('fifth-form-data');
 
 if (!validateFirstName()) {
   return false ;
@@ -135,7 +137,8 @@ if (!validateBirthdate()) {
 }
 
 if (!checkLocation()) {
-  alert("Vous devez choisir un tournoi.")
+  locationFormData.setAttribute("data-error-visible","true")
+  //alert("Vous devez choisir un tournoi.")
   return false 
   }
 
@@ -144,6 +147,7 @@ if (!checkBox1()) {
   checkbox1FormData.setAttribute("data-error-visible","true")
   //alert("Vous devez accepter les conditions d'utilisation.")
 return false 
+
 }
 
 else {
