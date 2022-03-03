@@ -113,7 +113,7 @@ function checkBox1(){
 }
 
 function validate () {
-  let Checkbox1FormData = document.getElementById('six-form-data');
+  let checkbox1FormData = document.getElementById('six-form-data');
 
 
 if (!validateFirstName()) {
@@ -141,7 +141,8 @@ if (!checkLocation()) {
 
 
 if (!checkBox1()) {
-  alert("Vous devez accepter les conditions d'utilisation.")
+  checkbox1FormData.setAttribute("data-error-visible","true")
+  //alert("Vous devez accepter les conditions d'utilisation.")
 return false 
 }
 
