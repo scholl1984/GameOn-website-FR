@@ -548,7 +548,7 @@ footer {
 
   .hero-content {
     padding: 0;
-    min-width: none;
+    min-width: 0;
     width: 100%;
   }
 
@@ -580,8 +580,6 @@ padding: 8px 37px;
   }
 }
 
-
-
 @media screen and (max-width: 450px) {
   img {
     height: 1rem;
@@ -609,7 +607,7 @@ padding: 8px 37px;
 
   .hero-content {
     padding: 0;
-    min-width: none;
+    min-width: 0;
     width: 100%;
   }
 
@@ -644,7 +642,7 @@ padding: 8px 37px;
 @media screen and (min-width: 451px) and (max-width: 769px) {
 
   main {
-    padding: Opx;
+    padding: 0px;
   }
   
   img {

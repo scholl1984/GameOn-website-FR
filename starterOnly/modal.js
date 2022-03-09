@@ -66,8 +66,9 @@ function validateEmail() {
     return false;
   } else {
     emailFormData.setAttribute("data-error-visible","")
+    return true;
   }
-  return true;
+  
 }
 
 function validateBirthdate() {
@@ -80,7 +81,6 @@ function validateBirthdate() {
       return false;
     }
     else {
-      
       birthdateFormData.setAttribute("data-error-visible","")
       return true;
     }           
@@ -105,7 +105,6 @@ function checkLocation(){
 
 function checkBox1(){
   if(document.getElementById("checkbox1").checked) {
-    
     
     return true;
   }
@@ -151,9 +150,14 @@ return false
 }
 
 else {
-  alert ("Merci ! Votre réservation a été reçue.")
-return true
-} 
-    
+    let inputsForm = document.getElementsByClassName('formData');
+    let btn = document.getElementsByClassName("btn-submit");
+    for (let i = 0; i < inputsForm.length; i++) {
+      inputsForm[i].style.display = "none";
+    }
+    console.log(btn)
+    btn[0].innerText = "Fermer"
+    return false
+  }     
 }
   
