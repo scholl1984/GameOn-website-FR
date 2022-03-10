@@ -26,6 +26,8 @@ function closeModal() {
 }
 
 function validateFirstName() {
+  
+
   let firstname = document.getElementById('first');
   let firstnameFormData = document.getElementById('first-form-data');
   if(firstname.value.length < 2) 
@@ -33,6 +35,9 @@ function validateFirstName() {
   firstnameFormData.setAttribute("data-error-visible","true")
   return false
 }
+  //else if (!isNaN(firstname.value))
+  //return false 
+
   else{
   firstnameFormData.setAttribute("data-error-visible","")
   return true
@@ -47,6 +52,10 @@ function validateLastName() {
   lastnameFormData.setAttribute("data-error-visible","true")
   return false
 }
+
+else if (!isNaN(lastname.value))
+return false 
+
   else{
   lastnameFormData.setAttribute("data-error-visible","")
   return true
@@ -74,12 +83,18 @@ function validateEmail() {
 function validateBirthdate() {
   {
     var x = document.getElementById("birthdate").value;
+    var y = x.max = "01/01/2014";
+    console.log(y)
     let birthdateFormData = document.getElementById('four-form-data');
     var reg = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
+    console.log(typeof x,x.split('/')[2])
     if (!x.match(reg)) {
       birthdateFormData.setAttribute("data-error-visible","true")
       return false;
+    }else if(Number(x.split('/')[2]) > 2014 ){
+     return false;
     }
+    
     else {
       birthdateFormData.setAttribute("data-error-visible","")
       return true;
