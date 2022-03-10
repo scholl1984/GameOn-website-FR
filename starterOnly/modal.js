@@ -116,6 +116,8 @@ function checkBox1(){
 function validate () {
   let checkbox1FormData = document.getElementById('six-form-data');
   let locationFormData = document.getElementById('fifth-form-data');
+  let inputsForm = document.getElementsByClassName('formData');
+  let btn = document.getElementsByClassName("btn-submit");
 
 if (!validateFirstName()) {
   return false ;
@@ -148,16 +150,22 @@ if (!checkBox1()) {
 return false 
 
 }
-
-else {
-    let inputsForm = document.getElementsByClassName('formData');
-    let btn = document.getElementsByClassName("btn-submit");
+else if( btn[0].textContent !== 'Fermer') {
     for (let i = 0; i < inputsForm.length; i++) {
       inputsForm[i].style.display = "none";
     }
-    console.log(btn)
-    btn[0].innerText = "Fermer"
-    return false
-  }     
+    const paragraph = document.createElement("p");
+    const newElement = document.getElementById("confirmation-message").appendChild(paragraph);
+    newElement.innerText = "Merci pour votre inscription";
+    newElement.style.cssText = "margin: 230px 54px 0px; height: 365px;"
+    btn[0].innerText = "Fermer";
+    if(btn[0].textContent === 'Fermer') {
+      btn[0].id = "fermer";
+    }
+      document.getElementById('fermer').addEventListener('click', function(){
+          return true
+    })
+   return false; 
+  }   
 }
   

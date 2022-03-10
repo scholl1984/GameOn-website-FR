@@ -125,8 +125,8 @@
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                
                 class="formData"
@@ -219,11 +219,12 @@
                   oninput="checkBox1()"
                   data-error="Vous devez coisir un tournoi."
                 />
-                <label class="checkbox2-label" for="checkbox1">
+                <label class="checkbox2-label formData" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
               </div>
+              <div id="confirmation-message"></div>
               <br>
               <button
                 class="btn-submit"
